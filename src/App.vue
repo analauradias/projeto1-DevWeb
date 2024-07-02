@@ -86,6 +86,7 @@ const enviar = ref(true);
         <input type="date" id="dataNasc" class="form-control" v-model="dados.dataNasc" placeholder="Data de nascimento" />
       </div>
 
+      <!-- ENDEREÇO -->
       <div data-mdb-input-init class="form-outline mb-4">
         <input type="text" class="form-control" v-model="dados.endereco" placeholder="Endereço" />
       </div>
@@ -105,19 +106,19 @@ const enviar = ref(true);
       <section class="separar">
         <p>Seus Hobbies:</p>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="esportes" value="option1" />
+          <input class="form-check-input" type="checkbox" id="esportes" v-model="dados.hobbies" value="esportes"/>
           <label class="form-check-label" for="esportes">Esportes</label>
         </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="musica" value="option2" />
+        <div class="form-check form-check-inline" >
+          <input class="form-check-input" type="checkbox" id="musica" v-model="dados.hobbies" value="musica" />
           <label class="form-check-label" for="musica">Música</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="leitura" value="option2" />
+          <input class="form-check-input" type="checkbox" id="leitura" v-model="dados.hobbies" value="leitura" />
           <label class="form-check-label" for="leitura">Leitura</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="filme" value="option2" />
+          <input class="form-check-input" type="checkbox" id="filme" v-model="dados.hobbies" value="filme" />
           <label class="form-check-label" for="filme">Filmes/Seriados</label>
         </div>
       </section>
@@ -125,19 +126,19 @@ const enviar = ref(true);
       <section class="separar">
         <p>Linguagem preferida:</p>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" id="js" value="option1" v-model="dados.linguagens"/>
+          <input class="form-check-input" type="radio" id="js" value="js" v-model="dados.linguagens"/>
           <label class="form-check-label" for="js">JavaScript</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" id="pyton" value="option2" v-model="dados.linguagens" />
+          <input class="form-check-input" type="radio" id="swift" value="swift" v-model="dados.linguagens" />
           <label class="form-check-label" for="pyton">Swift</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" id="php" value="option2" v-model="dados.linguagens"/>
+          <input class="form-check-input" type="radio" id="php" value="php" v-model="dados.linguagens"/>
           <label class="form-check-label" for="php">PHP</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" id="c" value="option2" v-model="dados.linguagens"/>
+          <input class="form-check-input" type="radio" id="c" value="c" v-model="dados.linguagens"/>
           <label class="form-check-label" for="c">C</label>
         </div>
       </section>
@@ -160,7 +161,7 @@ const enviar = ref(true);
         <p>Senha: {{ dados.senha }}</p>
         <p>Endereço: {{ dados.endereco }}</p>
         <p>Cidade: {{ dados.cidade }}</p>
-        <p>Estados: {{ dados.estados }}</p>
+        <p>Estados: {{ dados.estado }}</p>
         <p>Hobbies: {{ dados.hobbies }}</p>
         <p>Linguagem favorita: {{ dados.linguagens }}</p>
         <p>Biografia: {{ dados.bio }}</p>
