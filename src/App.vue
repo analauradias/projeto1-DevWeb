@@ -45,7 +45,8 @@ let estados = [
   { name: 'TO' }
 ]
 
-const enviar = ref(true);
+const enviar = ref(true)
+
 </script>
 
 <template>
@@ -55,13 +56,19 @@ const enviar = ref(true);
       <div class="row mb-4">
         <div class="col">
           <div data-mdb-input-init class="form-outline">
-            <input type="text" class="form-control" v-model="dados.nome" placeholder="Nome" />
+            <input type="text" class="form-control" v-model="dados.nome" placeholder="Nome" required/>
           </div>
         </div>
 
         <div class="col">
           <div data-mdb-input-init class="form-outline">
-            <input type="text" class="form-control" v-model="dados.sobrenome" placeholder="Sobrenome" />
+            <input
+              type="text"
+              class="form-control"
+              v-model="dados.sobrenome"
+              placeholder="Sobrenome"
+              required
+            />
           </div>
         </div>
       </div>
@@ -77,13 +84,24 @@ const enviar = ref(true);
       </div>
 
       <div data-mdb-input-init class="form-outline mb-4">
-        <input type="password" class="form-control" v-model="dados.confirmSenha" placeholder="Confirme sua senha" />
+        <input
+          type="password"
+          class="form-control"
+          v-model="dados.confirmSenha"
+          placeholder="Confirme sua senha"
+        />
       </div>
 
       <!-- DATA DE NASCIMENTO -->
       <div data-mdb-input-init class="form-outline mb-4">
         <label for="dataNasc">Data de nascimento:</label>
-        <input type="date" id="dataNasc" class="form-control" v-model="dados.dataNasc" placeholder="Data de nascimento" />
+        <input
+          type="date"
+          id="dataNasc"
+          class="form-control"
+          v-model="dados.dataNasc"
+          placeholder="Data de nascimento"
+        />
       </div>
 
       <!-- ENDEREÇO -->
@@ -106,19 +124,43 @@ const enviar = ref(true);
       <section class="separar">
         <p>Seus Hobbies:</p>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="esportes" v-model="dados.hobbies" value="esportes"/>
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="esportes"
+            v-model="dados.hobbies"
+            value="esportes"
+          />
           <label class="form-check-label" for="esportes">Esportes</label>
         </div>
-        <div class="form-check form-check-inline" >
-          <input class="form-check-input" type="checkbox" id="musica" v-model="dados.hobbies" value="musica" />
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="música"
+            v-model="dados.hobbies"
+            value="musica"
+          />
           <label class="form-check-label" for="musica">Música</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="leitura" v-model="dados.hobbies" value="leitura" />
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="leitura"
+            v-model="dados.hobbies"
+            value="leitura"
+          />
           <label class="form-check-label" for="leitura">Leitura</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="filme" v-model="dados.hobbies" value="filme" />
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="filme"
+            v-model="dados.hobbies"
+            value="filme"
+          />
           <label class="form-check-label" for="filme">Filmes/Seriados</label>
         </div>
       </section>
@@ -126,57 +168,100 @@ const enviar = ref(true);
       <section class="separar">
         <p>Linguagem preferida:</p>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" id="js" value="js" v-model="dados.linguagens"/>
+          <input
+            class="form-check-input"
+            type="radio"
+            id="js"
+            value="JS"
+            v-model="dados.linguagens"
+          />
           <label class="form-check-label" for="js">JavaScript</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" id="swift" value="swift" v-model="dados.linguagens" />
+          <input
+            class="form-check-input"
+            type="radio"
+            id="swift"
+            value="Swift"
+            v-model="dados.linguagens"
+          />
           <label class="form-check-label" for="pyton">Swift</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" id="php" value="php" v-model="dados.linguagens"/>
+          <input
+            class="form-check-input"
+            type="radio"
+            id="php"
+            value="Php"
+            v-model="dados.linguagens"
+          />
           <label class="form-check-label" for="php">PHP</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" id="c" value="c" v-model="dados.linguagens"/>
+          <input
+            class="form-check-input"
+            type="radio"
+            id="c"
+            value="C"
+            v-model="dados.linguagens"
+          />
           <label class="form-check-label" for="c">C</label>
         </div>
       </section>
 
       <!-- BIOGRAFIA -->
       <div data-mdb-input-init class="form-outline mb-4">
-        <textarea class="form-control" id="form6Example7" rows="4" placeholder="Biografia" v-model="dados.bio"></textarea>
+        <textarea
+          class="form-control"
+          id="form6Example7"
+          rows="4"
+          placeholder="Biografia"
+          v-model="dados.bio"
+        ></textarea>
       </div>
 
       <!-- ENVIAR -->
-      <button @click="enviar = false" data-mdb-ripple-init type="button"
-        class="btn btn-primary btn-block mb-4">Enviar</button>
+      <button
+        @click="enviar = false"
+        data-mdb-ripple-init
+        type="submit"
+        class="btn btn-primary btn-block mb-4"
+      >
+        Enviar
+      </button>
     </form>
     <section v-else>
-      <div>
-        <h2>Dados:</h2>
-        <p>Nome: {{ dados.nome }}</p>
-        <p>Sobrenome: {{ dados.sobrenome }}</p>
-        <p>E-mail: {{ dados.email }}</p>
-        <p>Senha: {{ dados.senha }}</p>
-        <p>Endereço: {{ dados.endereco }}</p>
-        <p>Cidade: {{ dados.cidade }}</p>
-        <p>Estados: {{ dados.estado }}</p>
-        <p>Hobbies: {{ dados.hobbies }}</p>
-        <p>Linguagem favorita: {{ dados.linguagens }}</p>
-        <p>Biografia: {{ dados.bio }}</p>
+      <div >
+        <h1 style="text-align: center; margin-bottom: 20px;">Dados</h1>
+        <p><strong>Nome:</strong> {{ dados.nome }}</p>
+        <p><strong>Sobrenome:</strong> {{ dados.sobrenome }}</p>
+        <p><strong>E-mail:</strong> {{ dados.email }}</p>
+        <p><strong>Senha:</strong> {{ dados.senha }}</p>
+        <p><strong>Endereço:</strong> {{ dados.endereco }}</p>
+        <p><strong>Cidade:</strong> {{ dados.cidade }}</p>
+        <p><strong>Estado::</strong> {{ dados.estado }}</p>
+        <p><strong>Hobbies:</strong> {{ dados.hobbies }}</p>
+        <p><strong>Linguagem favorita:</strong> {{ dados.linguagens }}</p>
+        <p><strong>Biografia:</strong> {{ dados.bio }}</p>
       </div>
 
-      <button @click="enviar = true" data-mdb-ripple-init type="button"
-        class="btn btn-primary btn-block mb-4">Voltar</button>
+      <button
+        @click="enviar = true"
+        data-mdb-ripple-init
+        type="submit"
+        class="btn btn-primary btn-block mb-4"
+      >
+        Voltar
+      </button>
     </section>
   </main>
 </template>
 
 <style scoped>
+
 main {
   margin-left: 50%;
-  width: 70%;
+  width: 80%;
 }
 
 .separar {
