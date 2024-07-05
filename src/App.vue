@@ -46,7 +46,6 @@ let estados = [
 ]
 
 const enviar = ref(true)
-
 </script>
 
 <template>
@@ -226,6 +225,7 @@ const enviar = ref(true)
         data-mdb-ripple-init
         type="submit"
         class="btn btn-primary btn-block mb-4"
+        v-if="dados.senha === dados.confirmSenha"
       >
         Enviar
       </button>
