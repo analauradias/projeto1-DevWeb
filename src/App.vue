@@ -225,7 +225,7 @@ const enviar = ref(true)
         data-mdb-ripple-init
         type="submit"
         class="btn btn-primary btn-block mb-4"
-        v-if="dados.senha === dados.confirmSenha"
+        v-if="dados.senha === dados.confirmSenha && dados.nome != '' && dados.sobrenome != '' && dados.email != ''"
       >
         Enviar
       </button>
